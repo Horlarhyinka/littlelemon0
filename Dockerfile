@@ -8,6 +8,8 @@ COPY Pipfile.lock .
 
 RUN pip3 install pipenv
 
+RUN pipenv shell
+
 RUN pipenv install
 
 EXPOSE 8000
