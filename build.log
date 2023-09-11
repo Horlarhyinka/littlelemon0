@@ -1,0 +1,71 @@
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 248B done
+#1 DONE 0.4s
+
+#2 [internal] load .dockerignore
+#2 transferring context: 2B done
+#2 DONE 0.5s
+
+#3 [internal] load metadata for docker.io/library/python:3.10-alpine3.17
+#3 DONE 3.7s
+
+#4 [1/8] FROM docker.io/library/python:3.10-alpine3.17@sha256:e2a0fb320a6ab0b2f9b913a7e9ce286c4382ac0b012cda03e6e6e85e92707fd6
+#4 DONE 0.0s
+
+#5 [2/8] WORKDIR /littlelemon0
+#5 CACHED
+
+#6 [internal] load build context
+#6 transferring context: 7.41kB 0.0s done
+#6 DONE 0.4s
+
+#7 [3/8] COPY Pipfile .
+#7 DONE 1.0s
+
+#8 [4/8] COPY Pipfile.lock .
+#8 DONE 1.2s
+
+#9 [5/8] RUN pip3 install pipenv
+#9 10.06 WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<pip._vendor.urllib3.connection.HTTPSConnection object at 0x7fa65ab52200>: Failed to establish a new connection: [Errno -3] Try again')': /simple/pipenv/
+#9 12.72 Collecting pipenv
+#9 17.73   WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<pip._vendor.urllib3.connection.HTTPSConnection object at 0x7fa6590a0250>: Failed to establish a new connection: [Errno -3] Try again')': /packages/a5/8b/60cf6828a57f05be72d0049cef7029b441c7e204aea0508d37fdf59a03f6/pipenv-2023.9.8-py3-none-any.whl
+#9 19.41   Downloading pipenv-2023.9.8-py3-none-any.whl (3.2 MB)
+#9 103.2      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.2/3.2 MB 38.7 kB/s eta 0:00:00
+#9 104.0 Collecting virtualenv>=20.24.2
+#9 104.8   Downloading virtualenv-20.24.5-py3-none-any.whl (3.7 MB)
+#9 257.5      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.7/3.7 MB 18.7 kB/s eta 0:00:00
+#9 258.4 Collecting certifi
+#9 258.7   Downloading certifi-2023.7.22-py3-none-any.whl (158 kB)
+#9 267.4      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 158.3/158.3 kB 20.6 kB/s eta 0:00:00
+#9 269.1 Collecting setuptools>=67
+#9 270.5   Downloading setuptools-68.2.0-py3-none-any.whl (807 kB)
+#9 319.8      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 807.8/807.8 kB 15.4 kB/s eta 0:00:00
+#9 320.7 Collecting platformdirs<4,>=3.9.1
+#9 321.2   Downloading platformdirs-3.10.0-py3-none-any.whl (17 kB)
+#9 326.4 Collecting distlib<1,>=0.3.7
+#9 327.0   Downloading distlib-0.3.7-py2.py3-none-any.whl (468 kB)
+#9 348.4      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 468.9/468.9 kB 24.9 kB/s eta 0:00:00
+#9 349.2 Collecting filelock<4,>=3.12.2
+#9 349.7   Downloading filelock-3.12.3-py3-none-any.whl (11 kB)
+#9 350.9 Collecting typing-extensions>=4.7.1
+#9 351.5   Downloading typing_extensions-4.7.1-py3-none-any.whl (33 kB)
+#9 354.0 Installing collected packages: distlib, typing-extensions, setuptools, platformdirs, certifi, filelock, virtualenv, pipenv
+#9 354.7   Attempting uninstall: setuptools
+#9 354.7     Found existing installation: setuptools 65.5.1
+#9 354.8     Uninstalling setuptools-65.5.1:
+#9 355.1       Successfully uninstalled setuptools-65.5.1
+#9 362.2 Successfully installed certifi-2023.7.22 distlib-0.3.7 filelock-3.12.3 pipenv-2023.9.8 platformdirs-3.10.0 setuptools-68.2.0 typing-extensions-4.7.1 virtualenv-20.24.5
+#9 362.2 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+#9 365.3 
+#9 365.3 [notice] A new release of pip is available: 23.0.1 -> 23.2.1
+#9 365.3 [notice] To update, run: pip install --upgrade pip
+#9 DONE 367.2s
+
+#10 [6/8] RUN shell
+#10 1.868 /bin/sh: shell: not found
+#10 ERROR: executor failed running [/bin/sh -c shell]: exit code: 127
+------
+ > [6/8] RUN shell:
+#10 1.868 /bin/sh: shell: not found
+------
+ERROR: failed to solve: executor failed running [/bin/sh -c shell]: exit code: 127
