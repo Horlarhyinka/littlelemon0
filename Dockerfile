@@ -6,11 +6,7 @@ COPY Pipfile .
 
 COPY Pipfile.lock .
 
-RUN pip3 install pipenv
-
-RUN pipenv shell
-
-RUN pipenv install
+RUN pip3 install -r requirements.txt
 
 EXPOSE 8000
 
