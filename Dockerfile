@@ -1,15 +1,16 @@
-FROM python:3.9-alpine3.17
+FROM python:3.9
 
-WORKDIR /littlelemon0
+WORKDIR /app
 
-COPY Pipfile .
+RUN apt-get update && apt-get install -y \
+    libpq-dev
 
-COPY Pipfile.lock .
+COPY Pipfile Pipfile.lock /app/
 
-RUN pip3 install -r requirements.txt
+RUN pip install pipenv && pipenv --python 3.9 install --deploy --ignore-pipfile
+
+COPY . /app/
 
 EXPOSE 8000
 
-COPY . .
-
-CMD ["python3", "manage.py", "runserver"]
+CMD ["pipenv", "run", "python", "manage.py", "runserver", "0.0.0.0:8000"]
