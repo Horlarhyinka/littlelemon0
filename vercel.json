@@ -2,11 +2,7 @@
     "builds": [
       {
         "src": "littlelemon/wsgi.py",
-        "use": "@vercel/python",
-        "config": { "maxLambdaSize": "15mb",
-          "runtime": "python3.10",
-          "buildCommand": "bash build_files.sh"
-         }  
+        "use": "@vercel/python"
       }
     ],
     "routes": [
