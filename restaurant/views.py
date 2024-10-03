@@ -5,6 +5,7 @@ from .models import Menu
 
 # Create your views here.
 def home(request):
+    print('rendering home...')
     return render(request, 'index.html')
 
 def about(request):
@@ -13,9 +14,9 @@ def about(request):
 def book(request):
     form = BookingForm()
     if request.method == 'POST':
-        form = BookingForm(request.POST)
-        if form.is_valid():
-            form.save()
+        data = BookingForm(request.POST)
+        if data.is_valid():
+            data.save()
     context = {'form':form}
     return render(request, 'book.html', context)
 

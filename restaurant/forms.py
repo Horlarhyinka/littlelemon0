@@ -7,3 +7,4 @@ class BookingForm(ModelForm):
     class Meta:
         model = Booking
         fields = "__all__"
+        exclude = ['reference']
