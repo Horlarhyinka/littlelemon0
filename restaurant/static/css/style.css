@@ -129,6 +129,10 @@ input{
     font-weight: 600;
 }
 
+.danger{
+    color: red;
+}
+
 #button {
     padding: .5rem 1rem;
     border: 1px solid #495E57;

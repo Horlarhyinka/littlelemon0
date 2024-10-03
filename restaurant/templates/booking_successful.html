@@ -1,0 +1,22 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<section>
+  <div class="row">
+    <div class="column">
+    <h1>You Have a Reservation</h1>
+      <div>
+        <p>Name: {{last_name}} {{first_name}}</p>
+      </div>
+      <div>
+        <p>Guests: {{guests}}</p>
+      </div>
+      <div>
+        <p>Note: {{note}}</p>
+      </div>
+      <div>
+        <h4>Reference Id: {{reference}}</h4>
+      </div>
+      <a href="#" >All reservations are deleted after 2 weeks of Booking</a>
+    </div>
+  </div>
+</section>
+{% endblock %}
