@@ -5,21 +5,9 @@ from .models import Menu, Booking
 from django.core.exceptions import ObjectDoesNotExist
 from django.views.decorators.csrf import ensure_csrf_cookie, csrf_exempt
 from django.http import HttpResponse
-import time
-import requests
-import os
-# Create your views here.
-
-def wake_server(interval):
-    base = os.environ['BASE_URL']
-    requests.get(f'{base}/check')
-    while True:
-        time.sleep(interval)
-        wake_server(interval)
-        
 
 #wake render server up before it goes dormant in 15th minute 
-wake_server(60*14)
+# wake_server(10)
 
 @csrf_exempt
 def check(request):
