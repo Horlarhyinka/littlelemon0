@@ -15,7 +15,7 @@ def home(request):
 def about(request):
     return render(request, 'about.html')
 
-@csrf_exempt
+@ensure_csrf_cookie
 def book(request):
     form = BookingForm()
     if request.method == 'POST':
