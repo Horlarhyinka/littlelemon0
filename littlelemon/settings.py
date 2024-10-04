@@ -126,9 +126,10 @@ USE_TZ = True
 # The settings for static files have been updated for the Graded assessment
 # STATIC_URL = 'restaurant/static/'
 
-# STATICFILES_DIRS = [
-#     "restaurant/static",
-# ]
+STATICFILES_DIRS = [
+    "restaurant/static",
+    "/static"
+]
 
 STATIC_URL = '/static/'
 
