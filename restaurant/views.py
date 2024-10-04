@@ -3,15 +3,19 @@ from django.shortcuts import render
 from .forms import BookingForm, TrackBookingForm
 from .models import Menu, Booking
 from django.core.exceptions import ObjectDoesNotExist
-
+from django.views.decorators.csrf import ensure_csrf_cookie
 # Create your views here.
+
+@ensure_csrf_cookie
 def home(request):
     print('rendering home...')
     return render(request, 'index.html')
 
+@ensure_csrf_cookie
 def about(request):
     return render(request, 'about.html')
 
+@ensure_csrf_cookie
 def book(request):
     form = BookingForm()
     if request.method == 'POST':
@@ -23,7 +27,7 @@ def book(request):
     context = {'form':form}
     return render(request, 'book.html', context)
 
-
+@ensure_csrf_cookie
 def track(request):
     form = TrackBookingForm()
 
@@ -52,12 +56,14 @@ def track(request):
 
 
 # Add your code here to create new views
+@ensure_csrf_cookie
 def menu(request):
     menu_data = Menu.objects.all().order_by("name")
     maindata = {"menus": menu_data}
     template_name = "menu.html"
     return render(request, template_name, maindata) 
 
+@ensure_csrf_cookie
 def display_menu_item(request, pk=None):
     if pk:
         menu_item = Menu.objects.get(pk=pk)
