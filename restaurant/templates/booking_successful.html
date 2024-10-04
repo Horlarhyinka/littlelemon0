@@ -2,6 +2,7 @@
 <section>
   <div class="row">
     <div class="column">
+      {% csrf_token %}
     <h1>You Have a Reservation</h1>
       <div>
         <p>Name: {{last_name}} {{first_name}}</p>
