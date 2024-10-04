@@ -3,7 +3,7 @@ from django.shortcuts import render
 from .forms import BookingForm, TrackBookingForm
 from .models import Menu, Booking
 from django.core.exceptions import ObjectDoesNotExist
-from django.views.decorators.csrf import ensure_csrf_cookie
+from django.views.decorators.csrf import ensure_csrf_cookie, csrf_exempt
 # Create your views here.
 
 @ensure_csrf_cookie
@@ -15,7 +15,7 @@ def home(request):
 def about(request):
     return render(request, 'about.html')
 
-@ensure_csrf_cookie
+@csrf_exempt
 def book(request):
     form = BookingForm()
     if request.method == 'POST':
